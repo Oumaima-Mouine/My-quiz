@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myinteljquiz.controller.Enseignant.EnseignantController">
+   <children>
+      <!-- Header Section -->
+      <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="77.0" prefWidth="600.0" style="-fx-background-color: #1c4a74;">
+         <children>
+            <Label layoutX="180.0" layoutY="12.0" text="Let's Create Quiz" textFill="#fafde6">
+               <font>
+                  <Font size="30.0">
+                  </Font>
+               </font>
+            </Label>
+            <Button fx:id="log_out_Btn" layoutX="20.0" layoutY="22.0" mnemonicParsing="false" onAction="#LogOutOnAction" style="-fx-background-color: #FFD700; -fx-background-radius: 20px;" text="Log Out" textFill="#1c1c1c">
+               <font>
+                  <Font name="System" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="create_Btn" layoutX="490.0" layoutY="22.0" mnemonicParsing="false" onAction="#CreateOnAction" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #00CED1; -fx-background-radius: 20px;" text="Create" textFill="#ffffff">
+               <font>
+                  <Font name="System" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+
+      <!-- Content Section -->
+      <AnchorPane layoutY="77.0" prefHeight="323.0" prefWidth="600.0" style="-fx-background-color: #f5f5f5; -fx-border-color: #dcdcdc; -fx-border-width: 1px;">
+         <children>
+            <TableView fx:id="table_Enseignant" layoutX="10.0" layoutY="10.0" prefHeight="250.0" prefWidth="580.0">
+               <columns>
+                  <TableColumn fx:id="id_column" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="name_column" prefWidth="150.0" text="Quiz Name" />
+                  <TableColumn fx:id="descript_Btn" prefWidth="275.0" text="Description" />
+                  <TableColumn fx:id="time_column" prefWidth="75.0" text="Time" />
+               </columns>
+            </TableView>
+
+            <Button fx:id="update_Btn" layoutX="400.0" layoutY="270.0" mnemonicParsing="false" onAction="#UpdateOnAction" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #1E90FF; -fx-background-radius: 15px;" text="Update" textFill="#ffffff">
+               <font>
+                  <Font name="System" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="delete_Btn" layoutX="500.0" layoutY="270.0" mnemonicParsing="false" onAction="#DeleteOnAction" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #FF6347; -fx-background-radius: 15px;" text="Delete" textFill="#ffffff">
+               <font>
+                  <Font name="System" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

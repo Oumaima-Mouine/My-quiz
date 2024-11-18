@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff; -fx-padding: 30;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myinteljquiz.controller.Etudiant.GrafuationController">
+
+    <!-- Main VBox for layout -->
+    <VBox alignment="CENTER" spacing="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+
+        <!-- Title -->
+        <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #1c4a74; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0.5, 0, 2);" text="Graduation Page" />
+
+        <!-- Image below the title -->
+        <ImageView fx:id="graduationImage" fitHeight="80" fitWidth="80" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0.5, 0, 1);">
+            <image>
+                <Image url="@../images/picture.png" />
+            </image>
+        </ImageView>
+
+        <!-- Message for correct answers and points -->
+        <VBox alignment="CENTER" spacing="15">
+            <Label fx:id="correctAnswersText" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Correct Answers: 0" />
+            <Label fx:id="pointsText" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Points: 0" />
+        </VBox>
+
+        <!-- Buttons for Restart and Cancel -->
+        <HBox alignment="CENTER" spacing="20">
+            <Button fx:id="restartButton" onAction="#restartButtonOnAction" style="-fx-background-color: #1c4a74; -fx-text-fill: white; -fx-font-size: 15px; -fx-padding: 12 25; -fx-border-radius: 8; -fx-background-radius: 8; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0.5, 0, 1);" text="Restart" />
+            <Button fx:id="cancelButton" onAction="#cancelButtonOnAction" style="-fx-background-color: #fdeb00; -fx-text-fill: black; -fx-font-size: 15px; -fx-padding: 12 25; -fx-border-radius: 8; -fx-background-radius: 8; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0.5, 0, 1);" text="Cancel" />
+        </HBox>
+
+    </VBox>
+</AnchorPane>

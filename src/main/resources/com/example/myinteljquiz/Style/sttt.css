@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f9fc;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 16px;
+    width: 400px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.card:last-child {
+    grid-column: span 2;
+    justify-self: center;
+}

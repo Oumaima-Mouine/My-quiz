@@ -1,0 +1,58 @@
+/* Background Styling */
+.graduation-page {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    -fx-padding: 20px;
+    -fx-border-color: #d3d3d3;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+/* Image Styling */
+.congrats-image {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 0, 0);
+    -fx-padding: 20px;
+}
+
+/* Title Text Styling */
+.title-text {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-fill: #1c4a74;
+    -fx-effect: dropshadow(gaussian, #000000, 4, 0.3, 2, 2);
+}
+
+/* Information Text Styling */
+.info-text {
+    -fx-font-size: 18px;
+    -fx-fill: #333333;
+    -fx-font-weight: semi-bold;
+}
+
+/* Button Styling */
+.styled-button {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-background-color: #1c4a74;
+    -fx-padding: 10px 25px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 5, 0.5, 0, 2);
+}
+
+.styled-button:hover {
+    -fx-background-color: #163a5e;
+}
+
+.restart-button {
+    -fx-background-color: #1c4a74;
+}
+
+.cancel-button {
+    -fx-background-color: #fdeb00;
+    -fx-text-fill: black;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #e6d700;
+}

@@ -1,0 +1,83 @@
+/* Style for the ListView */
+.list-view {
+    -fx-background-color: transparent; /* Make the background transparent */
+    -fx-padding: 10px;
+}
+
+/* Style for the individual cards (Quiz cards) */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-border-color: #ddd;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.5, 0, 0);
+    -fx-spacing: 10px;
+    -fx-pref-width: 560px; /* Adjust as needed */
+    -fx-pref-height: 100px; /* Adjust as needed */
+}
+
+/* Title Label Styling */
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* Description Label Styling */
+.card-description {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666;
+}
+
+/* Duration Label Styling */
+.card-duration {
+    -fx-font-size: 12px;
+    -fx-text-fill: #999;
+}
+
+/* Style for hover effect */
+.card:hover {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #bbb;
+}
+
+/* Style for the ListView to make it have some margin */
+.list-view {
+    -fx-padding: 20px;
+}
+
+/* Card styling */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center-left; /* Align content to the left */
+}
+/* Styling the ImageView inside the card */
+.card .image-view {
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 5;
+}
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.card-queue {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.card:hover {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #d1d1d1;
+}
+

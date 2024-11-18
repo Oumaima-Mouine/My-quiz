@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.myinteljquiz.controller.Etudiant.DoingQuiz"
+            prefHeight="600.0" prefWidth="800.0"
+            stylesheets="@../style/quizStyle.css">
+
+    <!-- Title and Scrolling Time -->
+    <HBox layoutX="20.0" layoutY="20.0" spacing="10.0">
+        <Label text="Quiz Time!" styleClass="title"/>
+        <Label fx:id="timeLabel" text="00:00" styleClass="timeLabel" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <!-- Question -->
+    <Label fx:id="questionLabel" layoutX="20.0" layoutY="80.0"
+           styleClass="question"/>
+
+    <!-- Option Buttons -->
+    <VBox fx:id="optionsVBox" layoutX="20.0" layoutY="150.0" spacing="10.0">
+        <!-- Dynamic option buttons will be added here -->
+    </VBox>
+
+    <!-- Progress Bar -->
+    <ProgressBar fx:id="progressBar" layoutX="20.0" layoutY="500.0" prefWidth="760.0" progress="0.0" styleClass="progressBar"/>
+
+    <!-- Navigation Buttons -->
+    <HBox layoutX="20.0" layoutY="550.0" spacing="20.0">
+        <Button fx:id="previousButton" text="Previous" prefWidth="120.0" styleClass="navButton"/>
+        <Button fx:id="nextButton" text="Next" prefWidth="120.0" styleClass="navButton"/>
+        <Button fx:id="submitButton" text="Submit" prefWidth="120.0" styleClass="submitButton"/>
+    </HBox>
+
+</AnchorPane>

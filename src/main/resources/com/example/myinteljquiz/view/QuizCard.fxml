@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.myinteljquiz.controller.Etudiant.QuizCardController"
+            prefHeight="400.0" prefWidth="600.0">
+    <HBox   spacing="10" style="-fx-padding: 10; -fx-background-color: #ffffff; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);">
+        <children>
+            <VBox spacing="5">
+                <Label fx:id="quizTitle" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Quiz Title" />
+                <Label fx:id="quizDescription" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="Quiz Description" />
+                <Label fx:id="quizTime" style="-fx-font-size: 12px; -fx-text-fill: #999;" text="Duration: 10 mins" />
+            </VBox>
+        </children>
+    </HBox>
+</AnchorPane>
