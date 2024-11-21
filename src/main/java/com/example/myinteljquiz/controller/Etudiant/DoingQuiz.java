@@ -145,35 +145,41 @@ public class DoingQuiz {
         quizTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                timeLeft--;
-                updateTimeDisplay();
+                try {
+                    timeLeft--;
+                    updateTimeDisplay();  // Update the time display on each tick
 
-                if (timeLeft <= 0) {
-                    quizTimer.cancel();
-                    try {
-                        submitQuiz();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+                    if (timeLeft <= 0) {
+                        quizTimer.cancel();
+                        try {
+                            submitQuiz();
+                        } catch (IOException e) {
+                            e.printStackTrace(); // Log the error if submission fails
+                        }
                     }
+                } catch (Exception e) {
+                    e.printStackTrace();  // Catch and log any exceptions that occur during the timer task
                 }
             }
         }, 1000, 1000);
     }
 
+
     private void updateTimeDisplay() {
-//        int minutes = timeLeft / 60;
-//        int seconds = timeLeft % 60;
-//        timeLabel.setText(String.format("%02d:%02d", minutes, seconds));
-//        progressBar.setProgress((double) timeLeft / (timeLeft + 1)); // Met à jour la barre de progression
-        Platform.runLater(() -> {
-            // Assuming formattedTime contains the time you want to show
-            timeLabel.setText("Time: " + formattedTime); // Update your label or any other UI component
-        });
-    }
-    public void setFormattedTime(String formattedTime) {
-        this.formattedTime = formattedTime;
-        updateTimeDisplay(); // Update the UI with the new time
-    }
+            // Calculate minutes and seconds
+            int minutes = timeLeft / 60;
+            int seconds = timeLeft % 60;
+
+            // Format the time
+            formattedTime = String.format("%02d:%02d", minutes, seconds);
+
+            // Update the time label in the UI on the JavaFX thread
+            Platform.runLater(() -> {
+                timeLabel.setText("Time: " + formattedTime);  // Update the time label
+                progressBar.setProgress((double) timeLeft / (timeLeft + 1));  // Update the progress bar
+            });
+        }
+
 
     @FXML
     private void nextQuestion() {
