@@ -140,13 +140,17 @@ public class EtudiantController {
     }
 
     @FXML
-    public void startQuiz(ActionEvent event)throws  IOException {
+    public void startQuiz(ActionEvent event) throws IOException {
         Quiz selectedQuiz = quizListView.getSelectionModel().getSelectedItem();
         if (selectedQuiz != null) {
-            // Proceed with starting the quiz (e.g., open a new scene for the quiz)
-//            System.out.println("Starting quiz: " + selectedQuiz.getName());
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/myinteljquiz/view/DoQuiz.fxml"));
             Parent root = fxmlLoader.load();
+
+            // Pass quiz ID to DoingQuiz controller
+            DoingQuiz controller = fxmlLoader.getController();
+            controller.initializeQuiz(selectedQuiz.getId()); // Pass the selected quiz ID
+
+            // Load the new scene
             Stage stage = (Stage) startQuizButton.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
@@ -156,6 +160,7 @@ public class EtudiantController {
             alert.showAndWait();
         }
     }
+
 
     @FXML
     public void searchQuiz(ActionEvent event) {
