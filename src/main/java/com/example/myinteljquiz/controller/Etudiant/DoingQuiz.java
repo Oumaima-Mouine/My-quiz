@@ -41,10 +41,17 @@ public class DoingQuiz {
 
     private String formattedTime;
 //    table for the correct answer
-    private int correctAnswer = 0;
+    private static int correctAnswer = 0;
 
     //    table for the incorrect answer
-    private int incorrectAnswer = 0;
+    private static int incorrectAnswer = 0;
+    public static String correctAnswer() {
+        return "Correct answer"+correctAnswer;
+    }
+    public static int getIncorrectAnswer() {
+        return incorrectAnswer;
+    }
+
 
     public void initializeQuiz(int quizId) {
         try {
@@ -210,6 +217,7 @@ public class DoingQuiz {
             currentQuestionIndex++;
             displayQuestion(currentQuestionIndex);
         }
+
     }
 
 
@@ -228,10 +236,13 @@ public class DoingQuiz {
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+        System.out.println("correctAnswer = " + correctAnswer);
+        System.out.println("incorrect = " + incorrectAnswer);
     }
 
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING, message, ButtonType.OK);
         alert.showAndWait();
     }
+
 }

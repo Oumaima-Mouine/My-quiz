@@ -8,8 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.w3c.dom.Text;
+import com.example.myinteljquiz.controller.Etudiant.DoingQuiz;
 
 import java.io.IOException;
+
+import static com.example.myinteljquiz.controller.Etudiant.DoingQuiz.correctAnswer;
 
 public class GrafuationController {
     @FXML private Label correctAnswersText;
@@ -18,7 +21,9 @@ public class GrafuationController {
     @FXML private Button cancelButton;
 
     @FXML
-    public void initialize() {}
+    public void initialize() {
+        correctAnswersText.setText(correctAnswer());
+    }
     @FXML
     public void restartButtonOnAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/myinteljquiz/view/DoQuiz.fxml"));
