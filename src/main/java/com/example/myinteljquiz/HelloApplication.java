@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginView.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/myinteljquiz/view/Etudiant.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Login Form!");
         stage.setScene(scene);
