@@ -29,6 +29,7 @@ public class EtudiantController {
     @FXML private Button startQuizButton;
     @FXML private ListView<Quiz> quizListView;
     private ObservableList<Quiz> quizList = FXCollections.observableArrayList();
+    static Quiz  selectedQuiz;
     @FXML
     public void initialize() {
         quizListView.setCellFactory(param -> new ListCell<Quiz>() {
@@ -141,7 +142,7 @@ public class EtudiantController {
 
     @FXML
     public void startQuiz(ActionEvent event) throws IOException {
-        Quiz selectedQuiz = quizListView.getSelectionModel().getSelectedItem();
+        selectedQuiz = quizListView.getSelectionModel().getSelectedItem();
         if (selectedQuiz != null) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/myinteljquiz/view/DoQuiz.fxml"));
             Parent root = fxmlLoader.load();

@@ -41,10 +41,10 @@ public class DoingQuiz {
 
     private String formattedTime;
 //    table for the correct answer
-    private static int correctAnswer = 0;
+    static int correctAnswer = 0;
 
     //    table for the incorrect answer
-    private static int incorrectAnswer = 0;
+    static int incorrectAnswer = 0;
     public static String correctAnswer() {
         return "Correct answer :  "+correctAnswer;
     }
@@ -177,17 +177,35 @@ public class DoingQuiz {
 
     private void updateTimeDisplay() {
             // Calculate minutes and seconds
-            int minutes = timeLeft / 60;
-            int seconds = timeLeft % 60;
+//            int minutes = timeLeft / 60;
+//            int seconds = timeLeft % 60;
+//
+//            // Format the time
+//            formattedTime = String.format("%02d:%02d", minutes, seconds);
+//
+//            // Update the time label in the UI on the JavaFX thread
+//            Platform.runLater(() -> {
+//                timeLabel.setText("Time: " + formattedTime);  // Update the time label
+//                progressBar.setProgress((double) timeLeft / (timeLeft + 1));  // Update the progress bar
+//            });
+        int minutes = timeLeft / 60;
+        int seconds = timeLeft % 60;
+        formattedTime = String.format("%02d:%02d", minutes, seconds);
 
-            // Format the time
-            formattedTime = String.format("%02d:%02d", minutes, seconds);
+        Platform.runLater(() -> {
+            timeLabel.setText("Time: " + formattedTime);
+            progressBar.setProgress((double) timeLeft / (timeLeft + 1)); // Progress calculation
+        });
 
-            // Update the time label in the UI on the JavaFX thread
+        if (timeLeft <= 0) {
             Platform.runLater(() -> {
-                timeLabel.setText("Time: " + formattedTime);  // Update the time label
-                progressBar.setProgress((double) timeLeft / (timeLeft + 1));  // Update the progress bar
+                try {
+                    submitQuiz(); // Auto-submit when time is up
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             });
+        }
         }
 
 

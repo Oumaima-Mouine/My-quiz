@@ -14,6 +14,7 @@ import java.io.IOException;
 
 import static com.example.myinteljquiz.controller.Etudiant.DoingQuiz.correctAnswer;
 import static com.example.myinteljquiz.controller.Etudiant.DoingQuiz.pointAnswer;
+import static com.example.myinteljquiz.controller.Etudiant.EtudiantController.selectedQuiz;
 
 public class GrafuationController {
     @FXML private Label correctAnswersText;
@@ -28,11 +29,17 @@ public class GrafuationController {
     }
     @FXML
     public void restartButtonOnAction(ActionEvent event) throws IOException {
+        DoingQuiz.correctAnswer = 0;
+        DoingQuiz.incorrectAnswer = 0;
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/myinteljquiz/view/DoQuiz.fxml"));
         Parent root = fxmlLoader.load();
+        DoingQuiz controller = fxmlLoader.getController();
+        controller.initializeQuiz(selectedQuiz.getId());
         Stage stage = (Stage) restartButton.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+
     }
     @FXML
     public void cancelButtonOnAction(ActionEvent event) throws IOException {

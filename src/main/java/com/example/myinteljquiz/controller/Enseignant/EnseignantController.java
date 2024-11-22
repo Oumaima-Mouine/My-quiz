@@ -108,6 +108,12 @@ public class EnseignantController {
     public void DeleteOnAction(ActionEvent event) {
         if (idQuiz == 0) { // Check if idQuiz is valid
             System.out.println("No quiz selected for deletion.");
+            // Optionally, display a message to the user
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("No Quiz Selected");
+            alert.setContentText("Please select a quiz to delete.");
+            alert.showAndWait();
             return;
         }
 
@@ -120,18 +126,30 @@ public class EnseignantController {
 
             int i = preparedStatement.executeUpdate();
             if (i > 0) {
-                System.out.println("Quiz deleted successfully");
-                // Refresh the TableView after deletion
-                quizList.clear();
-                loadQuizData();
+                System.out.println("Quiz deleted successfully.");
+                // Remove the deleted quiz from the TableView
+                quizList.removeIf(quiz -> quiz.getId() == idQuiz);
+                table_Enseignant.refresh();
             } else {
-                System.out.println("Quiz could not be deleted");
+                System.out.println("Quiz could not be deleted.");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Deletion Failed");
+                alert.setContentText("Could not delete the selected quiz.");
+                alert.showAndWait();
             }
         } catch (SQLException e) {
+            System.out.println("Error occurred during quiz deletion: " + e.getMessage());
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Database Error");
+            alert.setHeaderText("Deletion Failed");
+            alert.setContentText("An error occurred while trying to delete the quiz.");
+            alert.showAndWait();
             e.printStackTrace();
         }
     }
-//    public void UpdateOnAction(ActionEvent event) {
+
+    //    public void UpdateOnAction(ActionEvent event) {
 //        // Check if a quiz is selected
 //        Quiz selectedQuiz = table_Enseignant.getSelectionModel().getSelectedItem();
 //        if (selectedQuiz == null) {
