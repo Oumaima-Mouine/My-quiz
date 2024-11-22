@@ -13,6 +13,7 @@ import com.example.myinteljquiz.controller.Etudiant.DoingQuiz;
 import java.io.IOException;
 
 import static com.example.myinteljquiz.controller.Etudiant.DoingQuiz.correctAnswer;
+import static com.example.myinteljquiz.controller.Etudiant.DoingQuiz.pointAnswer;
 
 public class GrafuationController {
     @FXML private Label correctAnswersText;
@@ -23,6 +24,7 @@ public class GrafuationController {
     @FXML
     public void initialize() {
         correctAnswersText.setText(correctAnswer());
+        pointsText.setText(pointAnswer());
     }
     @FXML
     public void restartButtonOnAction(ActionEvent event) throws IOException {

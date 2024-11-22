@@ -46,7 +46,10 @@ public class DoingQuiz {
     //    table for the incorrect answer
     private static int incorrectAnswer = 0;
     public static String correctAnswer() {
-        return "Correct answer"+correctAnswer;
+        return "Correct answer :  "+correctAnswer;
+    }
+    public static String pointAnswer() {
+        return "Point :  "+correctAnswer;
     }
     public static int getIncorrectAnswer() {
         return incorrectAnswer;
